@@ -16,5 +16,3 @@
   "include": ["src/**/*", "types"],
   "exclude": ["node_modules"]
 }
-
-// "dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node -r tsconfig-paths/register src/server.ts\""
