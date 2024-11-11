@@ -26,7 +26,7 @@ const createApp = () => {
     const corsOptions = {
         origin: [
             "http://localhost:5173",
-            "https://task-mananger-naveed.netlify.app/",
+            "https://task-mananger-naveed.netlify.app",
         ],
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
