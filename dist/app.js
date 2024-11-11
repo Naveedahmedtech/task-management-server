@@ -24,7 +24,10 @@ const routePaths_1 = require("./constants/routePaths");
 const createApp = () => {
     const app = (0, express_config_1.default)();
     const corsOptions = {
-        origin: ["http://localhost:5173"],
+        origin: [
+            "http://localhost:5173",
+            "https://task-mananger-naveed.netlify.app/",
+        ],
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
     };
