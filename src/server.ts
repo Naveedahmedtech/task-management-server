@@ -3,35 +3,36 @@ import { createApp } from "./app";
 import logger from "./utils/logger";
 import "module-alias/register";
 import cors from "cors";
+import express from "express";
 
+const ap = express();
 
 loadEnv();
 
-const app = createApp();
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://task-mananger-naveed.netlify.app",
+];
+ap.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
-  const allowedOrigins = [
-    "http://localhost:5173",
-    "https://task-mananger-naveed.netlify.app",
-  ];
-  app.use(
-    cors({
-      origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error("Not allowed by CORS"));
-        }
-      },
-      credentials: true,
-    })
-  );
+const app = createApp();
 
 // Optional: Health check route to verify deployment
 app.get("/health", (req: any, res: any) => {
-  console.log(req.query)
+  console.log(req.query);
   return res.send("Server is healthy");
 });
-
 
 const PORT = process.env.PORT || 8001;
 

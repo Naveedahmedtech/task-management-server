@@ -8,13 +8,14 @@ const app_1 = require("./app");
 const logger_1 = __importDefault(require("./utils/logger"));
 require("module-alias/register");
 const cors_1 = __importDefault(require("cors"));
+const express_1 = __importDefault(require("express"));
+const ap = (0, express_1.default)();
 (0, config_1.loadEnv)();
-const app = (0, app_1.createApp)();
 const allowedOrigins = [
     "http://localhost:5173",
     "https://task-mananger-naveed.netlify.app",
 ];
-app.use((0, cors_1.default)({
+ap.use((0, cors_1.default)({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
@@ -25,6 +26,7 @@ app.use((0, cors_1.default)({
     },
     credentials: true,
 }));
+const app = (0, app_1.createApp)();
 // Optional: Health check route to verify deployment
 app.get("/health", (req, res) => {
     console.log(req.query);
