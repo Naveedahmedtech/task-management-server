@@ -2,6 +2,8 @@ import { loadEnv } from "@/config";
 import { createApp } from "@/app";
 import logger from "@/utils/logger";
 import express, { Request, Response } from "express"; // Import express and types directly
+import "module-alias/register";
+
 
 loadEnv();
 
@@ -12,6 +14,11 @@ app.get("/health", (req: any, res: any) => {
   console.log(req.query)
   return res.send("Server is healthy");
 });
+
+
+const PORT = process.env.PORT || 8001;
+
+app.listen(PORT, () => console.log(`App listening on ${PORT}`));
 
 // Export the app instead of listening on a port
 export default app;
