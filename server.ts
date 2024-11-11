@@ -1,6 +1,6 @@
-import { loadEnv } from "@/config";
-import { createApp } from "@/app";
-import logger from "@/utils/logger";
+import { loadEnv } from "./src/config";
+import { createApp } from "./src/app";
+import logger from "./src/utils/logger";
 
 loadEnv();
 
