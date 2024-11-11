@@ -25,8 +25,10 @@ const createApp = () => {
     const app = (0, express_config_1.default)();
     const corsOptions = {
         origin: [
-            "http://localhost",
+            "http://localhost", // for Postman
             "http://localhost:5173",
+            "https://task-management-server-h3dil86d9-naveed-ahmeds-projects.vercel.app",
+            "https://task-management-server-1ykdp0l7g-naveed-ahmeds-projects.vercel.app",
             "https://task-mananger-naveed.netlify.app",
         ],
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
