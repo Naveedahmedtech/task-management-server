@@ -33,7 +33,7 @@ export const createApp = () => {
     credentials: true,
   };
 
-  app.use(cors(corsOptions));
+  app.use(cors());
   app.use(
     session({
       secret: "session-secret-key",

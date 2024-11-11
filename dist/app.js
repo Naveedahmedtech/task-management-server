@@ -34,7 +34,7 @@ const createApp = () => {
         methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
         credentials: true,
     };
-    app.use((0, cors_1.default)(corsOptions));
+    app.use((0, cors_1.default)());
     app.use((0, express_session_1.default)({
         secret: "session-secret-key",
         resave: false,
