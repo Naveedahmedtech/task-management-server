@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "types": ["jest"]
+  },
+  "include": ["src/**/*", "types"],
+  "exclude": ["node_modules"]
+}
+
+// "dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node -r tsconfig-paths/register src/server.ts\""
