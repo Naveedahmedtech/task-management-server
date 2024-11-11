@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx jest --passWithNoTests",
     "build": "rimraf dist && npx tsc",
-    "start": "cross-env NODE_ENV=prod node tsconfig-paths-bootstrap.js",
+    "start": "cross-env NODE_ENV=prod node dist/server.js",
     "dev": "nodemon --watch src --ext ts --exec \"ts-node -r tsconfig-paths/register src/server.ts\"",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
