@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.csrfTokenHandler = void 0;
 const csrf_1 = __importDefault(require("csrf"));
-const CustomError_1 = require("@/utils/CustomError");
+const CustomError_1 = require("../utils/CustomError");
 const tokens = new csrf_1.default();
 // CSRF token handler middleware
 const csrfTokenHandler = (req, res, next) => {

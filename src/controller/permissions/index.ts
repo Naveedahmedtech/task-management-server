@@ -1,7 +1,7 @@
-import prisma from "@/prisma";
-import { CustomError } from "@/utils/CustomError";
-import { sendSuccessResponse } from "@/utils/responseHandler";
-import { NextFunction, Request, Response } from "express";
+import { CustomError } from "../../utils/CustomError";
+import prisma from "../../prisma";
+import { sendSuccessResponse } from "../../utils/responseHandler";
+import { Request, Response, NextFunction } from "express";
 
 export const createPermission = async (
   req: Request,

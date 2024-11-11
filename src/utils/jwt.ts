@@ -1,4 +1,4 @@
-  import { ENV } from "@/constants";
+  import { ENV } from "../constants";
   import { sign, verify } from "jsonwebtoken";
 
   export const createToken = async (data: any, expiry: string | undefined) => {

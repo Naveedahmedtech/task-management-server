@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendErrorResponse = exports.sendSuccessResponse = void 0;
-const constants_1 = require("@/constants");
+const constants_1 = require("../constants");
 const sendSuccessResponse = (res, message, result = null, statusCode = 200, code = constants_1.RESPONSE_CODES.SUCCESS) => {
     res.status(statusCode).json({
         success: true,

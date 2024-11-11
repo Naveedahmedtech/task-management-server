@@ -1,7 +1,6 @@
-import { loadEnv } from "@/config";
-import { createApp } from "@/app";
-import logger from "@/utils/logger";
-import express, { Request, Response } from "express"; // Import express and types directly
+import { loadEnv } from "./config";
+import { createApp } from "./app";
+import logger from "./utils/logger";
 import "module-alias/register";
 
 

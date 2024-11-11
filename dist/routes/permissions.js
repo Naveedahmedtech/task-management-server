@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const permissions_1 = require("@/controller/permissions");
-const routePaths_1 = require("@/constants/routePaths");
+const permissions_1 = require("../controller/permissions");
+const routePaths_1 = require("../constants/routePaths");
 const permissionRouter = express_1.default.Router();
 permissionRouter.post(routePaths_1.ROUTES.APP.ROOT, permissions_1.createPermission);
 // permissionRouter.get(ROUTES.APP.ROOT, getPermissions);

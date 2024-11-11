@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createRole = void 0;
-const prisma_1 = __importDefault(require("@/prisma"));
-const CustomError_1 = require("@/utils/CustomError");
-const responseHandler_1 = require("@/utils/responseHandler");
+const CustomError_1 = require("../../utils/CustomError");
+const prisma_1 = __importDefault(require("../../prisma"));
+const responseHandler_1 = require("../../utils/responseHandler");
 const createRole = async (req, res, next) => {
     try {
         console.log(req.body);

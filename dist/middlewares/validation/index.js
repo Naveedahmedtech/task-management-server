@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateRequest = void 0;
-const responseHandler_1 = require("@/utils/responseHandler");
+const responseHandler_1 = require("../../utils/responseHandler");
 const validateRequest = (schema) => {
     return (req, res, next) => {
         const { error } = schema.validate(req.body, { abortEarly: false });

@@ -1,4 +1,4 @@
-import { CustomError } from "@/utils/CustomError";
+import { CustomError } from "./CustomError";
 import { JwtPayload } from "jsonwebtoken";
 
 export const isDecodedWithId = (

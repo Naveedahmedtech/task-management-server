@@ -1,11 +1,11 @@
-import { IGetUserAuthInfoRequest } from "@/types";
-import { isDecodedWithId } from "@/utils/checkDecoded";
-import { sendErrorResponse } from "@/utils/responseHandler";
+import { IGetUserAuthInfoRequest } from "../types";
+import { isDecodedWithId } from "../utils/checkDecoded";
+import { sendErrorResponse } from "../utils/responseHandler";
 import { Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { ACCESS_CONTROL } from "@/constants/routePaths";
-import prisma from "@/prisma";
-import { ENV } from "@/constants";
+import { ACCESS_CONTROL } from "../constants/routePaths";
+import prisma from "../prisma";
+import { ENV } from "../constants";
 
 export const verifyTokenMiddleware = async (
   req: IGetUserAuthInfoRequest,

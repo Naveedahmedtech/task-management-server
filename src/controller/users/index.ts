@@ -1,9 +1,9 @@
-import { ROLES } from "@/constants/routePaths";
-import prisma from "@/prisma";
-import { IGetUserAuthInfoRequest } from "@/types";
-import { isDecodedWithId } from "@/utils/checkDecoded";
-import { CustomError } from "@/utils/CustomError";
-import { sendSuccessResponse } from "@/utils/responseHandler";
+import { ROLES } from "../../constants/routePaths";
+import prisma from "../../prisma";
+import { IGetUserAuthInfoRequest } from "../../types";
+import { isDecodedWithId } from "../../utils/checkDecoded";
+import { CustomError } from "../../utils/CustomError";
+import { sendSuccessResponse } from "../../utils/responseHandler";
 import { NextFunction, Response } from "express";
 
 export const getUsers = async (

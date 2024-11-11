@@ -1,11 +1,9 @@
-// src/controller/task.ts
-
+import { CustomError } from "../../utils/CustomError";
+import prisma from "../../prisma";
+import { sendSuccessResponse } from "../../utils/responseHandler";
 import { Response, NextFunction } from "express";
-import prisma from "@/prisma";
-import { sendSuccessResponse } from "@/utils/responseHandler";
-import { CustomError } from "@/utils/CustomError";
-import { IGetUserAuthInfoRequest } from "@/types";
-import { isDecodedWithId } from "@/utils/checkDecoded";
+import { IGetUserAuthInfoRequest } from "../../types";
+import { isDecodedWithId } from "../../utils/checkDecoded";
 
 // Create a new task
 export const createTask = async (
@@ -87,9 +85,6 @@ export const getTasks = async (
   }
 };
 
-
-
-
 // Update an existing task
 export const updateTask = async (
   req: IGetUserAuthInfoRequest,
@@ -160,8 +155,6 @@ export const deleteTask = async (
   }
 };
 
-
-
 export const getUserTaskCounts = async (
   req: IGetUserAuthInfoRequest,
   res: Response,
@@ -174,12 +167,13 @@ export const getUserTaskCounts = async (
       const userId = decoded.id;
 
       // Fetch task counts by status for the specified user
-      const [totalTasks, completedTasks, pendingTasks, inProgressTasks] = await Promise.all([
-        prisma.task.count({ where: { userId } }),
-        prisma.task.count({ where: { userId, status: "COMPLETED" } }),
-        prisma.task.count({ where: { userId, status: "PENDING" } }),
-        prisma.task.count({ where: { userId, status: "IN_PROGRESS" } }),
-      ]);
+      const [totalTasks, completedTasks, pendingTasks, inProgressTasks] =
+        await Promise.all([
+          prisma.task.count({ where: { userId } }),
+          prisma.task.count({ where: { userId, status: "COMPLETED" } }),
+          prisma.task.count({ where: { userId, status: "PENDING" } }),
+          prisma.task.count({ where: { userId, status: "IN_PROGRESS" } }),
+        ]);
 
       return sendSuccessResponse(res, "Task counts retrieved successfully", {
         totalTasks,
@@ -192,7 +186,6 @@ export const getUserTaskCounts = async (
     next(error);
   }
 };
-
 
 export const getAllUserTasksForAdmin = async (
   req: IGetUserAuthInfoRequest,
@@ -211,18 +204,18 @@ export const getAllUserTasksForAdmin = async (
       },
     };
 
-      if (status && status !== "null" && status !== "undefined") {
-        whereFilter.status = status.toString().toUpperCase();
-      }
-      if (priority && priority !== "null" && priority !== "undefined") {
-        whereFilter.priority = priority.toString().toUpperCase();
-      }
-      if (search && search !== "null" && search !== "undefined") {
-        whereFilter.title = {
-          contains: search.toString(),
-          mode: "insensitive", // Case-insensitive search
-        };
-      }
+    if (status && status !== "null" && status !== "undefined") {
+      whereFilter.status = status.toString().toUpperCase();
+    }
+    if (priority && priority !== "null" && priority !== "undefined") {
+      whereFilter.priority = priority.toString().toUpperCase();
+    }
+    if (search && search !== "null" && search !== "undefined") {
+      whereFilter.title = {
+        contains: search.toString(),
+        mode: "insensitive", // Case-insensitive search
+      };
+    }
 
     // Fetch paginated tasks including user details for admin
     const tasks = await prisma.task.findMany({
@@ -265,5 +258,3 @@ export const getAllUserTasksForAdmin = async (
     next(error);
   }
 };
-
-

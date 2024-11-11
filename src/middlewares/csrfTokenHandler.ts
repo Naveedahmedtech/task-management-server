@@ -1,6 +1,6 @@
 import Tokens from "csrf";
 import { Request, Response, NextFunction } from "express";
-import { CustomError } from "@/utils/CustomError";
+import { CustomError } from "../utils/CustomError";
 
 const tokens = new Tokens();
 

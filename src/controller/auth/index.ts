@@ -1,8 +1,8 @@
-import { CustomError } from "@/utils/CustomError";
-import { getHashPassword, verifyPassword } from "@/utils/hash";
-import { createToken } from "@/utils/jwt";
-import prisma from "@/prisma";
-import { sendSuccessResponse } from "@/utils/responseHandler";
+import { CustomError } from "../../utils/CustomError";
+import { getHashPassword, verifyPassword } from "../../utils/hash";
+import { createToken } from "../../utils/jwt";
+import prisma from "../../prisma";
+import { sendSuccessResponse } from "../../utils/responseHandler";
 import { Request, Response, NextFunction } from "express";
 
 const permissionsStructure: { [role: string]: string[] } = {

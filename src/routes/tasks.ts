@@ -1,7 +1,7 @@
 import express from "express";
-import { verifyTokenMiddleware } from "@/middlewares/verifyTokenMiddleware";
-import { ROUTES } from "@/constants/routePaths";
-import { createTask, getAllUserTasksForAdmin, getTasks, getUserTaskCounts, updateTask } from "@/controller/tasks";
+import { verifyTokenMiddleware } from "../middlewares/verifyTokenMiddleware";
+import { ROUTES } from "../constants/routePaths";
+import { createTask, getAllUserTasksForAdmin, getTasks, getUserTaskCounts, updateTask } from "../controller/tasks";
 
 const tasksRouter = express.Router();
 

@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const verifyTokenMiddleware_1 = require("@/middlewares/verifyTokenMiddleware");
-const routePaths_1 = require("@/constants/routePaths");
-const tasks_1 = require("@/controller/tasks");
+const verifyTokenMiddleware_1 = require("../middlewares/verifyTokenMiddleware");
+const routePaths_1 = require("../constants/routePaths");
+const tasks_1 = require("../controller/tasks");
 const tasksRouter = express_1.default.Router();
 tasksRouter.post(routePaths_1.ROUTES.APP.ROOT, verifyTokenMiddleware_1.verifyTokenMiddleware, tasks_1.createTask);
 tasksRouter.get(routePaths_1.ROUTES.APP.ROOT, verifyTokenMiddleware_1.verifyTokenMiddleware, tasks_1.getTasks);

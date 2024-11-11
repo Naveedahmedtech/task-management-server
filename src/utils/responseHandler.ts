@@ -1,5 +1,5 @@
-import { Response } from "@/config/express.config";
-import { RESPONSE_CODES } from "@/constants";
+import { Response } from "../config/express.config";
+import { RESPONSE_CODES } from "../constants";
 
 export const sendSuccessResponse = (
   res: Response,

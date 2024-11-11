@@ -1,4 +1,4 @@
-import { sendErrorResponse } from "@/utils/responseHandler";
+import { sendErrorResponse } from "../utils/responseHandler";
 import { Request, Response, NextFunction } from "express";
 import { RateLimiter } from "limiter";
 

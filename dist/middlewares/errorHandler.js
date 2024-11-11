@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.errorHandler = void 0;
-const CustomError_1 = require("@/utils/CustomError");
-const logger_1 = __importDefault(require("@/utils/logger"));
-const responseHandler_1 = require("@/utils/responseHandler");
+const CustomError_1 = require("../utils/CustomError");
+const logger_1 = __importDefault(require("../utils/logger"));
+const responseHandler_1 = require("../utils/responseHandler");
 const errorHandler = (err, req, res, next) => {
     const statusCode = err instanceof CustomError_1.CustomError
         ? err.statusCode

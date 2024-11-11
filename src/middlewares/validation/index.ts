@@ -1,6 +1,6 @@
-import { NextFunction, Request, Response } from "@/config/express.config";
+import { NextFunction, Request, Response } from "../../config/express.config";
 import { Schema, ValidationErrorItem } from "joi";
-import { sendErrorResponse } from "@/utils/responseHandler";
+import { sendErrorResponse } from "../../utils/responseHandler";
 
 export const validateRequest = (schema: Schema) => {
   return (req: Request, res: Response, next: NextFunction) => {

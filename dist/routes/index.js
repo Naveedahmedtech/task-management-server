@@ -3,15 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_config_1 = require("@/config/express.config");
+const express_config_1 = require("../config/express.config");
 // ** routes
 const roles_1 = __importDefault(require("./roles"));
 const permissions_1 = __importDefault(require("./permissions"));
 const auth_1 = __importDefault(require("./auth"));
 const users_1 = __importDefault(require("./users"));
 const tasks_1 = __importDefault(require("./tasks"));
-const csrfTokenHandler_1 = require("@/middlewares/csrfTokenHandler");
-const routePaths_1 = require("@/constants/routePaths");
+const csrfTokenHandler_1 = require("../middlewares/csrfTokenHandler");
+const routePaths_1 = require("../constants/routePaths");
 express_config_1.router.use(routePaths_1.ROUTES.AUTH.BASE, auth_1.default);
 express_config_1.router.use(routePaths_1.ROUTES.USERS.BASE, users_1.default);
 express_config_1.router.use(routePaths_1.ROUTES.ROLES.BASE, roles_1.default);

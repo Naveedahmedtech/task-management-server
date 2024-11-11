@@ -1,14 +1,13 @@
 "use strict";
-// src/controller/task.ts
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllUserTasksForAdmin = exports.getUserTaskCounts = exports.deleteTask = exports.updateTask = exports.getTasks = exports.createTask = void 0;
-const prisma_1 = __importDefault(require("@/prisma"));
-const responseHandler_1 = require("@/utils/responseHandler");
-const CustomError_1 = require("@/utils/CustomError");
-const checkDecoded_1 = require("@/utils/checkDecoded");
+const CustomError_1 = require("../../utils/CustomError");
+const prisma_1 = __importDefault(require("../../prisma"));
+const responseHandler_1 = require("../../utils/responseHandler");
+const checkDecoded_1 = require("../../utils/checkDecoded");
 // Create a new task
 const createTask = async (req, res, next) => {
     const { decoded } = req.user || {};

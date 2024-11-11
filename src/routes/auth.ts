@@ -1,10 +1,10 @@
 import express from "express";
 
-import { loginUser, logout, registerUser } from "@/controller/auth";
-import { loginSchema, registerSchema } from "@/lib/validation/auth";
-import csrfProtection from "@/middlewares/csrfTokenHandler";
-import { validateRequest } from "@/middlewares/validation";
-import { ROUTES } from "@/constants/routePaths";
+import { loginUser, logout, registerUser } from "../controller/auth";
+import { loginSchema, registerSchema } from "../lib/validation/auth";
+import csrfProtection from "../middlewares/csrfTokenHandler";
+import { validateRequest } from "../middlewares/validation";
+import { ROUTES } from "../constants/routePaths";
 
 const authRouter = express.Router();
 

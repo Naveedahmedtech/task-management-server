@@ -1,4 +1,4 @@
-import { Request, Response, router } from "@/config/express.config";
+import { Request, Response, router } from "../config/express.config";
 
 // ** routes
 import roleRouter from "./roles";
@@ -6,8 +6,8 @@ import permissionRouter from "./permissions";
 import authRouter from "./auth";
 import userRouter from "./users";
 import tasksRouter from "./tasks";
-import { csrfTokenHandler } from "@/middlewares/csrfTokenHandler";
-import { ROUTES } from "@/constants/routePaths";
+import { csrfTokenHandler } from "../middlewares/csrfTokenHandler";
+import { ROUTES } from "../constants/routePaths";
 
 router.use(ROUTES.AUTH.BASE, authRouter);
 router.use(ROUTES.USERS.BASE, userRouter);

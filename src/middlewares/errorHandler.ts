@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from "@/config/express.config";
-import { CustomError } from "@/utils/CustomError";
-import logger from "@/utils/logger";
-import { sendErrorResponse } from "@/utils/responseHandler";
+import { Request, Response, NextFunction } from "../config/express.config";
+import { CustomError } from "../utils/CustomError";
+import logger from "../utils/logger";
+import { sendErrorResponse } from "../utils/responseHandler";
 
 export const errorHandler = (
   err: any,

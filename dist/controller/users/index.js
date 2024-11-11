@@ -4,11 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAdminDashboardCounts = exports.getManagerAssignedTasks = exports.assignManagerToUsers = exports.getUserByToken = exports.getUsers = void 0;
-const routePaths_1 = require("@/constants/routePaths");
-const prisma_1 = __importDefault(require("@/prisma"));
-const checkDecoded_1 = require("@/utils/checkDecoded");
-const CustomError_1 = require("@/utils/CustomError");
-const responseHandler_1 = require("@/utils/responseHandler");
+const routePaths_1 = require("../../constants/routePaths");
+const prisma_1 = __importDefault(require("../../prisma"));
+const checkDecoded_1 = require("../../utils/checkDecoded");
+const CustomError_1 = require("../../utils/CustomError");
+const responseHandler_1 = require("../../utils/responseHandler");
 const getUsers = async (req, res, next) => {
     try {
         const page = parseInt(req.query.page) || 1;

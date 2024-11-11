@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_1 = require("@/config");
-const app_1 = require("@/app");
-const logger_1 = __importDefault(require("@/utils/logger"));
+const config_1 = require("./config");
+const app_1 = require("./app");
+const logger_1 = __importDefault(require("./utils/logger"));
 require("module-alias/register");
 (0, config_1.loadEnv)();
 const app = (0, app_1.createApp)();

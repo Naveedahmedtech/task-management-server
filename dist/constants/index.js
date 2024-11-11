@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ENV = exports.LIMITS = exports.RESPONSE_CODES = void 0;
-const config_1 = require("@/config");
+const config_1 = require("../config");
 (0, config_1.loadEnv)();
 exports.RESPONSE_CODES = {
     SUCCESS: "SUCCESS",

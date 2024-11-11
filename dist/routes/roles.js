@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const roles_1 = require("@/controller/roles");
-const routePaths_1 = require("@/constants/routePaths");
+const roles_1 = require("../controller/roles");
+const routePaths_1 = require("../constants/routePaths");
 const roleRouter = express_1.default.Router();
 roleRouter.post(routePaths_1.ROUTES.APP.ROOT, roles_1.createRole);
 // roleRouter.get(ROUTES.APP.ROOT, getRoles);

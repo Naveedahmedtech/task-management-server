@@ -1,13 +1,13 @@
-import express from "@/config/express.config";
+import express from "./config/express.config";
 
 // ** middlewares
-import { requestLogger } from "@/middlewares/requestLogger";
-import { notFoundHandler } from "@/middlewares/notFountHandler";
-import { errorHandler } from "@/middlewares/errorHandler";
-import { rateLimiterMiddleware } from "@/middlewares/rateLimit";
+import { requestLogger } from "./middlewares/requestLogger";
+import { notFoundHandler } from "./middlewares/notFountHandler";
+import { errorHandler } from "./middlewares/errorHandler";
+import { rateLimiterMiddleware } from "./middlewares/rateLimit";
 
 // ** routes
-import routes from "@/routes";
+import routes from "./routes";
 
 // ** external libraries
 import helmet from "helmet";
@@ -17,7 +17,7 @@ import cors from "cors";
 import { LIMITS } from "./constants";
 import { csrfTokenHandler } from "./middlewares/csrfTokenHandler";
 import session from "express-session";
-import { ROUTES } from "@/constants/routePaths";
+import { ROUTES } from "./constants/routePaths";
 
 export const createApp = () => {
   const app = express();

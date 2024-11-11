@@ -1,7 +1,7 @@
 import express from "express";
-import { assignManagerToUsers, getAdminDashboardCounts, getManagerAssignedTasks, getUserByToken, getUsers } from "@/controller/users";
-import { verifyTokenMiddleware } from "@/middlewares/verifyTokenMiddleware";
-import { ROUTES } from "@/constants/routePaths";
+import { assignManagerToUsers, getAdminDashboardCounts, getManagerAssignedTasks, getUserByToken, getUsers } from "../controller/users";
+import { verifyTokenMiddleware } from "../middlewares/verifyTokenMiddleware";
+import { ROUTES } from "../constants/routePaths";
 
 const userRouter = express.Router();
 

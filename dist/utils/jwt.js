@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifyToken = exports.createToken = void 0;
-const constants_1 = require("@/constants");
+const constants_1 = require("../constants");
 const jsonwebtoken_1 = require("jsonwebtoken");
 const createToken = async (data, expiry) => {
     return (0, jsonwebtoken_1.sign)({

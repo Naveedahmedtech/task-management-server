@@ -5,8 +5,8 @@ import {
 //   getPermissionById,
 //   getPermissions,
 //   updatePermission,
-} from "@/controller/permissions";
-import { ROUTES } from "@/constants/routePaths";
+} from "../controller/permissions";
+import { ROUTES } from "../constants/routePaths";
 
 const permissionRouter = express.Router();
 

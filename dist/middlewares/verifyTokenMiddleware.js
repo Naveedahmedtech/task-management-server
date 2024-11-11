@@ -4,12 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifyTokenMiddleware = void 0;
-const checkDecoded_1 = require("@/utils/checkDecoded");
-const responseHandler_1 = require("@/utils/responseHandler");
+const checkDecoded_1 = require("../utils/checkDecoded");
+const responseHandler_1 = require("../utils/responseHandler");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const routePaths_1 = require("@/constants/routePaths");
-const prisma_1 = __importDefault(require("@/prisma"));
-const constants_1 = require("@/constants");
+const routePaths_1 = require("../constants/routePaths");
+const prisma_1 = __importDefault(require("../prisma"));
+const constants_1 = require("../constants");
 const verifyTokenMiddleware = async (req, res, next) => {
     const token = req.cookies?.accessToken;
     console.log("tokentokentoken===-=-=-=-=-=-***", token);

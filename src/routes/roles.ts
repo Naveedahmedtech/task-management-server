@@ -6,8 +6,8 @@ import {
 //   getRoleById,
 //   getRoles,
 //   updateRole,
-} from "@/controller/roles";
-import { ROUTES } from "@/constants/routePaths";
+} from "../controller/roles";
+import { ROUTES } from "../constants/routePaths";
 
 const roleRouter = express.Router();
 
