@@ -78,7 +78,7 @@ export const registerUser = async (
     });
 
     await prisma.rolePermission.createMany({
-      data: permissions.map((permission) => ({
+      data: permissions.map((permission:any) => ({
         roleId: existingRole.id,
         permissionId: permission.id,
       })),
