@@ -5,15 +5,17 @@ import "module-alias/register";
 import cors from "cors";
 import express from "express";
 
-const ap = express();
-
 loadEnv();
 
 const allowedOrigins = [
   "http://localhost:5173",
   "https://task-mananger-naveed.netlify.app",
 ];
-ap.use(
+
+const app = createApp();
+
+// Apply CORS before any routes or middleware
+app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
@@ -23,13 +25,13 @@ ap.use(
       }
     },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly specify allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Specify headers to prevent preflight issues
   })
 );
 
-const app = createApp();
-
 // Optional: Health check route to verify deployment
-app.get("/health", (req: any, res: any) => {
+app.get("/health", (req:any, res:any) => {
   console.log(req.query);
   return res.send("Server is healthy");
 });
@@ -37,9 +39,6 @@ app.get("/health", (req: any, res: any) => {
 const PORT = process.env.PORT || 8001;
 
 app.listen(PORT, () => console.log(`App listening on ${PORT}`));
-
-// Export the app instead of listening on a port
-export default app;
 
 // Error handling and logging
 process.on("uncaughtException", (error) => {
@@ -49,3 +48,5 @@ process.on("uncaughtException", (error) => {
 process.on("unhandledRejection", (reason, promise) => {
   logger.error("Unhandled Rejection at:", promise, "reason:", reason);
 });
+
+export default app;
