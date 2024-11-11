@@ -16,22 +16,12 @@ const routes_1 = __importDefault(require("./routes"));
 const helmet_1 = __importDefault(require("helmet"));
 const compression_1 = __importDefault(require("compression"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
-const cors_1 = __importDefault(require("cors"));
 const constants_1 = require("./constants");
 const csrfTokenHandler_1 = require("./middlewares/csrfTokenHandler");
 const express_session_1 = __importDefault(require("express-session"));
 const routePaths_1 = require("./constants/routePaths");
 const createApp = () => {
     const app = (0, express_config_1.default)();
-    app.use((0, cors_1.default)({
-        origin: [
-            "http://localhost",
-            "http://localhost:5173",
-            "https://task-mananger-naveed.netlify.app",
-        ],
-        credentials: true,
-    }));
-    app.use((0, cors_1.default)());
     app.use((0, express_session_1.default)({
         secret: "session-secret-key",
         resave: false,

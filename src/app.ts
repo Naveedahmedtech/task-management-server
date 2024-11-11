@@ -13,7 +13,6 @@ import routes from "./routes";
 import helmet from "helmet";
 import compression from "compression";
 import cookieParser from "cookie-parser";
-import cors from "cors";
 import { LIMITS } from "./constants";
 import { csrfTokenHandler } from "./middlewares/csrfTokenHandler";
 import session from "express-session";
@@ -21,18 +20,8 @@ import { ROUTES } from "./constants/routePaths";
 
 export const createApp = () => {
   const app = express();
-  app.use(
-    cors({
-      origin: [
-        "http://localhost",
-        "http://localhost:5173",
-        "https://task-mananger-naveed.netlify.app",
-      ],
-      credentials: true,
-    })
-  );
 
-  app.use(cors());
+
   app.use(
     session({
       secret: "session-secret-key",
