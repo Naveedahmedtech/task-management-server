@@ -21,17 +21,16 @@ import { ROUTES } from "./constants/routePaths";
 
 export const createApp = () => {
   const app = express();
-  const corsOptions = {
-    origin: [
-      "http://localhost", // for Postman
-      "http://localhost:5173",
-      "https://task-management-server-h3dil86d9-naveed-ahmeds-projects.vercel.app",
-      "https://task-management-server-1ykdp0l7g-naveed-ahmeds-projects.vercel.app",
-      "https://task-mananger-naveed.netlify.app",
-    ],
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-    credentials: true,
-  };
+  app.use(
+    cors({
+      origin: [
+        "http://localhost",
+        "http://localhost:5173",
+        "https://task-mananger-naveed.netlify.app",
+      ],
+      credentials: true,
+    })
+  );
 
   app.use(cors());
   app.use(
