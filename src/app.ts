@@ -27,7 +27,7 @@ export const createApp = () => {
       secret: "session-secret-key",
       resave: false,
       saveUninitialized: true,
-      cookie: { secure: false },
+      cookie: { secure: false, sameSite: "none" },
     })
   );
   app.use(csrfTokenHandler);

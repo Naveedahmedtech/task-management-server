@@ -26,7 +26,7 @@ const createApp = () => {
         secret: "session-secret-key",
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: false },
+        cookie: { secure: false, sameSite: "none" },
     }));
     app.use(csrfTokenHandler_1.csrfTokenHandler);
     app.set("trust proxy", 1);
