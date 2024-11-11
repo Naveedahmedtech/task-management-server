@@ -1,37 +1,26 @@
 import { loadEnv } from "@/config";
 import { createApp } from "@/app";
 import logger from "@/utils/logger";
+import express, { Request, Response } from "express"; // Import express and types directly
 
 loadEnv();
 
 const app = createApp();
 
-const PORT = process.env.PORT || 8001;
+// Optional: Health check route to verify deployment
+app.get("/health", (req: any, res: any) => {
+  console.log(req.query)
+  return res.send("Server is healthy");
+});
 
-const startServer = async () => {
-  try {
-    app.listen(PORT, () => {
-      console.info(`\n
-        *************************
-          ------->  APP IS RUNNING ON PORT [${PORT}]
-        *************************************
-        `);
-    }); 
+// Export the app instead of listening on a port
+export default app;
 
-    // catch application error here...
-    process.on("uncaughtException", (error) => {
-      logger.error("Uncaught Exception thrown:", error);
-      process.exit(1);
-    });
-    // process.on("uncaughtExceptionMonitor", () => {});
-    process.on("unhandledRejection", (reason, promise) => {
-      logger.error("Unhandled Rejection at:", promise, "reason:", reason);
-      console.error("Promise:", promise, "Reason:", reason);
-    });
-  } catch (error) {
-    logger.error("Error starting server:", error);
-    process.exit(1);
-  }
-};
+// Error handling and logging
+process.on("uncaughtException", (error) => {
+  logger.error("Uncaught Exception thrown:", error);
+});
 
-startServer();
+process.on("unhandledRejection", (reason, promise) => {
+  logger.error("Unhandled Rejection at:", promise, "reason:", reason);
+});
