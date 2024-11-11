@@ -14,6 +14,6 @@
     "types": ["jest"],
     "noImplicitAny": false
   },
-  "include": ["./src/**/*", "types", "/server.ts"],
+  "include": ["./src/**/*", "types", "/server.ts", "src/server.ts"],
   "exclude": ["node_modules", "dist"]
 }
