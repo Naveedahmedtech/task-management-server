@@ -23,10 +23,7 @@ const express_session_1 = __importDefault(require("express-session"));
 const routePaths_1 = require("./constants/routePaths");
 const createApp = () => {
     const app = (0, express_config_1.default)();
-    const allowedOrigins = [
-        "http://localhost:5173",
-        "https://task-mananger-naveed.netlify.app",
-    ];
+    const allowedOrigins = "*";
     app.use((0, cors_1.default)({
         origin: function (origin, callback) {
             if (!origin || allowedOrigins.includes(origin)) {

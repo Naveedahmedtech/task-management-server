@@ -21,10 +21,7 @@ import { ROUTES } from "./constants/routePaths";
 
 export const createApp = () => {
   const app = express();
-  const allowedOrigins = [
-    "http://localhost:5173",
-    "https://task-mananger-naveed.netlify.app",
-  ];
+  const allowedOrigins = "*";
   app.use(
     cors({
       origin: function (origin, callback) {
